@@ -115,11 +115,11 @@ class DhizukuInstaller @Inject constructor(
         val iPackageInstaller = getIPackageInstaller()
         val installer = if (isSAndAbove) {
             Refine.unsafeCast<PackageInstaller>(
-                PackageInstallerHidden(iPackageInstaller, DHIZUKU_PACKAGE_NAME, null, 0)
+                PackageInstallerHidden(iPackageInstaller, context.packageName, null, 0)
             )
         } else if (isOAndAbove) {
             Refine.unsafeCast<PackageInstaller>(
-                PackageInstallerHidden(iPackageInstaller, DHIZUKU_PACKAGE_NAME, 0)
+                PackageInstallerHidden(iPackageInstaller, context.packageName, 0)
             )
         } else {
             null
